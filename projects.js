@@ -21,7 +21,13 @@ window.PORTFOLIO_DATA = {
   ],
   projects: [
     // ACHIEVEMENTS — newest entries first
-    { id: 'best-campus-ambassador', category: 'achievements', order: 300, featured: true, title: 'Best Campus Ambassador — Shomvob 2026', type: 'Recognition', date: '2026', description: 'Named Best Campus Ambassador in the Shomvob Campus Ambassador Program 2026.', details: 'A recognition for campus outreach, communication and promotional work. Other campus ambassador roles include HDNB and the First National Research Festival (CUCSU).', links: [] },
+    { id: 'best-campus-ambassador', category: 'achievements', order: 300, featured: true, title: 'Best Campus Ambassador — Shomvob 2026',workMedia: [
+  {
+    kind: 'image',
+    src: 'assets/work/Achievements.jpg',
+    alt: 'My Achievement'
+  }
+], type: 'Recognition', date: '2026', description: 'Named Best Campus Ambassador in the Shomvob Campus Ambassador Program 2026.', details: 'A recognition for campus outreach, communication and promotional work. Other campus ambassador roles include HDNB and the First National Research Festival (CUCSU).', links: [] },
     { id: 'hult-prize-sust', category: 'achievements', order: 200, featured: false, title: 'Hult Prize SUST — Semi-finalist', type: 'Competition', date: 'SUST', description: 'Led Team Raw Makers Corporation to the SUST semifinals.', details: 'An entrepreneurship-focused competition experience built around presenting and developing an actionable venture idea.', links: [{ label: 'Read abstract', url: 'https://drive.google.com/file/d/1zlfkJpmkZf6T3AhKINRF1gUBJ4p7evSM/view?usp=drivesdk' }] },
     { id: 'research-bootcamp-organiser', category: 'achievements', order: 100, featured: false, title: 'Research Bootcamp — Co-organiser', type: 'Event leadership', date: '300+ attendees', description: 'Helped organise a research bootcamp and supported participant operations for an event with more than 300 attendees.', details: 'Managed participant databases, outreach tracking and logistics, keeping the workflow organised and free of scheduling errors.', links: [] },
 
