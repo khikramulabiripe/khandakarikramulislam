@@ -24,7 +24,7 @@ window.PORTFOLIO_DATA = {
     { id: 'best-campus-ambassador', category: 'achievements', order: 300, featured: true, title: 'Best Campus Ambassador — Shomvob 2026',workMedia: [
   {
     kind: 'image',
-    src: 'assets/work/pic1.jpg',
+    src: 'assets/work/work1.jpg',
     alt: 'My Achievement'
   }
 ], type: 'Recognition', date: '2026', description: 'Named Best Campus Ambassador in the Shomvob Campus Ambassador Program 2026.', details: 'A recognition for campus outreach, communication and promotional work. Other campus ambassador roles include HDNB and the First National Research Festival (CUCSU).', links: [] },
