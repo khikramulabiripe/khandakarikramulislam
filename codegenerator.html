@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portfolio Project Code Generator</title>
+  <style>
+    :root{color-scheme:dark;--bg:#041020;--surface:#08213c;--surface2:#0b2d4c;--line:rgba(150,216,244,.19);--text:#edf9ff;--muted:#9ab6cb;--cyan:#48e0ec;--danger:#ff9b9b;--max:1180px;font-family:"DM Sans",Arial,sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 8% 0,rgba(29,132,191,.28),transparent 25%),linear-gradient(145deg,#06182d,#020914 75%);color:var(--text);line-height:1.55}.shell{width:min(var(--max),calc(100% - 40px));margin:auto;padding:54px 0 80px}.eyebrow{color:var(--cyan);font-size:.72rem;font-weight:800;letter-spacing:.17em}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;margin-bottom:32px}.hero h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:1;letter-spacing:-.07em;margin:12px 0 18px}.hero p{max-width:650px;color:var(--muted);margin:0}.notice{align-self:end;padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(7,35,61,.62);color:#b8d4e6;font-size:.88rem}.notice strong{color:var(--cyan)}.generator{display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,.9fr);gap:24px}.panel{border:1px solid var(--line);border-radius:22px;background:linear-gradient(150deg,rgba(11,45,76,.93),rgba(4,19,35,.91));padding:clamp(21px,3vw,34px);box-shadow:0 22px 70px rgba(0,0,0,.2)}.panel h2{font-size:1.15rem;letter-spacing:-.025em;margin:0 0 20px}.fieldset{border:0;border-top:1px solid var(--line);margin:28px 0 0;padding:24px 0 0}.fieldset:first-of-type{border:0;margin-top:0;padding-top:0}.fieldset legend{padding:0 10px 0 0;color:#9fe9f5;font-size:.7rem;letter-spacing:.15em;font-weight:800}label{display:grid;gap:7px;color:#c9e1f0;font-size:.78rem;font-weight:700}input,select,textarea,button{font:inherit}input,select,textarea{width:100%;border:1px solid rgba(150,216,244,.23);border-radius:10px;padding:11px 12px;color:var(--text);background:rgba(1,13,27,.64);outline:none;transition:border-color .2s,box-shadow .2s}input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(72,224,236,.12)}textarea{min-height:106px;resize:vertical}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:15px}.grid.one{grid-template-columns:1fr}.hint{color:var(--muted);font-size:.72rem;font-weight:400;line-height:1.45}.feature-box{margin-top:16px;padding:17px;border:1px solid rgba(72,224,236,.33);border-radius:14px;background:rgba(16,103,143,.13)}.feature-box[hidden]{display:none}.link-row{display:grid;grid-template-columns:1fr 1.45fr auto;gap:9px;margin-top:10px}.media-row{display:grid;grid-template-columns:.72fr 1.25fr 1fr 1fr auto;gap:9px;margin-top:10px}.icon-button,.secondary-button{border:1px solid rgba(124,205,236,.35);background:rgba(17,85,123,.3);color:#dffaff;border-radius:10px;cursor:pointer;font-size:.76rem;font-weight:800;padding:10px 12px;transition:background .2s,border .2s}.icon-button:hover,.secondary-button:hover{border-color:var(--cyan);background:rgba(22,121,163,.48)}.icon-button{align-self:stretch;color:#ffb4b4}.generate{width:100%;border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(110deg,#43dce8,#41aef5);color:#04203b;font-weight:900;letter-spacing:.08em;cursor:pointer;transition:transform .2s,filter .2s}.generate:hover{transform:translateY(-2px);filter:brightness(1.08)}.output-panel{position:sticky;top:22px;align-self:start}.output-panel h2{margin-bottom:8px}.output-copy{color:var(--muted);font-size:.84rem;margin:0 0 18px}.destination{display:grid;gap:5px;border-left:3px solid var(--cyan);padding:8px 0 8px 13px;margin:18px 0;color:#b7d5e7;font-size:.79rem}.destination b{color:#f0fbff;font-size:.85rem}pre{min-height:330px;max-height:65vh;overflow:auto;margin:0;padding:17px;border-radius:13px;border:1px solid rgba(150,216,244,.18);background:#020b15;color:#cdeeff;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;word-break:break-word}.output-actions{display:flex;gap:10px;margin-top:13px}.output-actions button{flex:1}.status{min-height:24px;margin:11px 0 0;color:#a3e9d6;font-size:.78rem}.empty{color:#7899b2}@media(max-width:850px){.hero,.generator{grid-template-columns:1fr}.output-panel{position:static}.hero{gap:18px}.shell{padding-top:34px}.media-row{grid-template-columns:1fr 1fr}}@media(max-width:560px){.shell{width:calc(100% - 28px)}.grid,.link-row,.media-row{grid-template-columns:1fr}.icon-button{min-height:40px}.panel{padding:20px 16px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PRIVATE HELPER · NOT LINKED FROM THE PORTFOLIO</span>
+        <h1>Project code<br>generator.</h1>
+        <p>Fill in a project once, then copy the generated code into <code>projects.js</code>. This page does not upload anything and is not included in the public navigation.</p>
+      </div>
+      <aside class="notice"><strong>For the left-side Best Work gallery:</strong> first put its image/video files in <code>assets/work/</code>. If “Best Work” is true, add one gallery row for every file. Existing project links remain separate.</aside>
+    </section>
+
+    <div class="generator">
+      <form class="panel" id="project-form">
+        <h2>New project details</h2>
+        <fieldset class="fieldset">
+          <legend>ESSENTIAL</legend>
+          <div class="grid">
+            <label>Work name<input id="title" required placeholder="e.g. Sustainable Factory Dashboard"></label>
+            <label>Category<select id="category" required></select></label>
+            <label>Project type<input id="type" placeholder="e.g. Power BI · Excel"></label>
+            <label>Date / result<input id="date" placeholder="e.g. Nov 2026"></label>
+            <label>Order number<input id="order" type="number" min="1" value="1000" required><span class="hint">Use a larger number for a newer project. The newest Best Work (largest order) is shown on the homepage.</span></label>
+            <label>Best Work on homepage?<select id="best-work"><option value="true">true — show in the main Best Work card</option><option value="false">false — show only in the work library</option></select></label>
+          </div>
+          <div class="grid one"><label>Short description<textarea id="description" required placeholder="A concise summary shown on the homepage and library."></textarea></label></div>
+          <div class="grid one"><label>Extra details <span class="hint">Optional — appears in the category library only.</span><textarea id="details" placeholder="Methods, contribution, context, or confidentially note."></textarea></label></div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>PUBLIC PROJECT LINKS (OPTIONAL)</legend>
+          <div id="link-rows"></div>
+          <button class="secondary-button" id="add-link" type="button">+ Add another project link</button>
+        </fieldset>
+
+        <fieldset class="fieldset feature-box" id="homepage-media-box">
+          <legend>BEST WORK MEDIA GALLERY</legend>
+          <p class="hint">This gallery appears in the large left-side Best Work card on <code>index.html</code>. Put every local file in <code>assets/work/</code>. Add one row per image/video; multiple items scroll side-by-side. Clicking an item opens the first public project link above.</p>
+          <div id="media-rows"></div>
+          <button class="secondary-button" id="add-media" type="button">+ Add another gallery file</button>
+        </fieldset>
+
+        <button class="generate" type="submit">GENERATE PROJECT CODE</button>
+      </form>
+
+      <aside class="panel output-panel" aria-live="polite">
+        <h2>Copy this into the data file</h2>
+        <p class="output-copy">The generator will name the exact category comment to find.</p>
+        <div class="destination" id="destination"><b>Destination: projects.js</b><span>Generate code to see the precise paste location.</span></div>
+        <pre id="code-output" class="empty">Your project object will appear here.</pre>
+        <div class="output-actions"><button class="secondary-button" id="copy-code" type="button">Copy code</button><button class="secondary-button" id="reset-form" type="button">Clear form</button></div>
+        <p class="status" id="status"></p>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+      const categories = [
+        ['achievements', 'ACHIEVEMENTS'], ['case-solving', 'CASE SOLVING'], ['video-content', 'VIDEO CONTENT'], ['comsol', 'COMSOL MULTIPHYSICS'], ['cad', 'CAD & SOLIDWORKS'], ['research', 'RESEARCH'], ['ben-rich', 'BEN RICH BUSINESS'], ['analytics', 'EXCEL & POWER BI'], ['jolchaya', 'PROJECT JOL CHAYA'], ['certifications', 'CERTIFICATIONS']
+      ];
+      const form = document.getElementById('project-form');
+      const category = document.getElementById('category');
+      const bestWork = document.getElementById('best-work');
+      const mediaBox = document.getElementById('homepage-media-box');
+      const linkRows = document.getElementById('link-rows');
+      const mediaRows = document.getElementById('media-rows');
+      const output = document.getElementById('code-output');
+      const destination = document.getElementById('destination');
+      const status = document.getElementById('status');
+      const slugify = value => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'new-project';
+      const value = id => document.getElementById(id).value.trim();
+
+      category.innerHTML = categories.map(([id, name]) => `<option value="${id}">${name}</option>`).join('');
+
+      function addLink(label = '', url = '') {
+        const row = document.createElement('div');
+        row.className = 'link-row';
+        row.innerHTML = `<input class="link-label" aria-label="Link label" placeholder="Link label (e.g. View slides)" value="${label}"><input class="link-url" type="url" aria-label="Link URL" placeholder="https://..." value="${url}"><button class="icon-button" type="button" aria-label="Remove this link">Remove</button>`;
+        row.querySelector('button').addEventListener('click', () => row.remove());
+        linkRows.append(row);
+      }
+
+      function addMedia() {
+        const row = document.createElement('div');
+        row.className = 'media-row';
+        row.innerHTML = `<select class="media-kind" aria-label="Gallery media type"><option value="image">Image</option><option value="video">Video (.mp4)</option><option value="embed">Embed URL</option></select><input class="media-src" aria-label="Gallery file path" placeholder="assets/work/achievement-1.jpg"><input class="media-alt" aria-label="Gallery alt text" placeholder="Short visual description"><input class="media-poster" aria-label="Video poster path" placeholder="Optional video poster"><button class="icon-button" type="button" aria-label="Remove this gallery file">Remove</button>`;
+        row.querySelector('button').addEventListener('click', () => row.remove());
+        mediaRows.append(row);
+      }
+
+      function setHomepageMediaVisibility() {
+        const isBestWork = bestWork.value === 'true';
+        mediaBox.hidden = !isBestWork;
+        mediaRows.querySelectorAll('.media-src').forEach(input => input.required = false);
+      }
+
+      function getLinks() {
+        return [...linkRows.querySelectorAll('.link-row')].map(row => ({
+          label: row.querySelector('.link-label').value.trim(),
+          url: row.querySelector('.link-url').value.trim()
+        })).filter(link => link.url).map(link => ({ label: link.label || 'Open project', url: link.url }));
+      }
+
+      function getWorkMedia() {
+        return [...mediaRows.querySelectorAll('.media-row')].map(row => {
+          const kind = row.querySelector('.media-kind').value;
+          const src = row.querySelector('.media-src').value.trim();
+          const media = {
+            kind,
+            src,
+            alt: row.querySelector('.media-alt').value.trim()
+          };
+          const poster = row.querySelector('.media-poster').value.trim();
+          if (kind === 'video' && poster) media.poster = poster;
+          return media;
+        }).filter(media => media.src).map(media => ({
+          ...media,
+          alt: media.alt || 'Best Work gallery preview'
+        }));
+      }
+
+      function projectCode(project) {
+        return JSON.stringify(project, null, 2).replace(/^/gm, '  ') + ',';
+      }
+
+      document.getElementById('add-link').addEventListener('click', () => addLink());
+      document.getElementById('add-media').addEventListener('click', () => addMedia());
+      bestWork.addEventListener('change', setHomepageMediaVisibility);
+      document.getElementById('title').addEventListener('input', () => status.textContent = '');
+      document.getElementById('copy-code').addEventListener('click', async () => {
+        if (!output.dataset.code) { status.textContent = 'Generate the project code first.'; return; }
+        try { await navigator.clipboard.writeText(output.dataset.code); status.textContent = 'Copied. Paste it into projects.js.'; }
+        catch { status.textContent = 'Copy was blocked by this browser. Select the code manually and copy it.'; }
+      });
+      document.getElementById('reset-form').addEventListener('click', () => {
+        form.reset(); linkRows.replaceChildren(); mediaRows.replaceChildren(); addLink(); addMedia(); setHomepageMediaVisibility(); output.textContent = 'Your project object will appear here.'; output.classList.add('empty'); output.dataset.code = ''; destination.innerHTML = '<b>Destination: projects.js</b><span>Generate code to see the precise paste location.</span>'; status.textContent = '';
+      });
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const isBestWork = bestWork.value === 'true';
+        const workMedia = getWorkMedia();
+        if (isBestWork && !workMedia.length) { status.textContent = 'Add at least one gallery image/video path for a Best Work project.'; mediaRows.querySelector('.media-src')?.focus(); return; }
+        const project = {
+          id: slugify(value('title')),
+          category: category.value,
+          order: Number(value('order')),
+          bestWork: isBestWork,
+          title: value('title'),
+          type: value('type'),
+          date: value('date'),
+          description: value('description')
+        };
+        if (value('details')) project.details = value('details');
+        if (isBestWork) {
+          project.workMedia = workMedia;
+        }
+        project.links = getLinks();
+        const categoryName = categories.find(item => item[0] === category.value)[1];
+        const instruction = `Paste this new object inside the projects: [ ] array in projects.js, directly below the comment: // ${categoryName}.`;
+        const code = `/* ${instruction} */\n${projectCode(project)}`;
+        output.textContent = code;
+        output.dataset.code = code;
+        output.classList.remove('empty');
+        destination.innerHTML = `<b>Destination: projects.js</b><span>${instruction}</span>${isBestWork ? '<span>Also upload every gallery file to assets/work/ before publishing.</span>' : ''}`;
+        status.textContent = 'Done. Copy the generated code, paste it, then save projects.js.';
+      });
+
+      addLink();
+      addMedia();
+      setHomepageMediaVisibility();
+    })();
+  </script>
+</body>
+</html>
